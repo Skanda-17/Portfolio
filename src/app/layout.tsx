@@ -1,8 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/Nav'
-import SocialLinks from '@/components/SocialLinks'
+import { profile } from '@/lib/profile'
+import { ThemeProvider } from '@/components/theme/ThemeProvider'
+import FloatingNav from '@/components/FloatingNav'
+import ScrollProgress from '@/components/ui/ScrollProgress'
+import LoadingScreen from '@/components/ui/LoadingScreen'
+import Footer from '@/components/sections/Footer'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -17,8 +21,58 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Skanda Bharadwaj GM | Portfolio',
-  description: 'Portfolio of Skanda Bharadwaj GM',
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: `${profile.name} | ${profile.title}`,
+    template: `%s | ${profile.name}`,
+  },
+  description: profile.summary,
+  keywords: [
+    'Artificial Intelligence Engineer',
+    'Machine Learning Engineer',
+    'Deep Learning',
+    'Computer Vision',
+    'Generative AI',
+    'MLOps',
+    'Data Science',
+    profile.name,
+  ],
+  authors: [{ name: profile.name, url: profile.siteUrl }],
+  creator: profile.name,
+  openGraph: {
+    type: 'website',
+    url: profile.siteUrl,
+    title: `${profile.name} | ${profile.title}`,
+    description: profile.summary,
+    siteName: `${profile.name} — Portfolio`,
+    images: [{ url: '/ai-hero.png', width: 1200, height: 630, alt: profile.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${profile.name} | ${profile.title}`,
+    description: profile.summary,
+    images: ['/ai-hero.png'],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: profile.siteUrl },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#050816',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+// Structured data helps search engines understand the page (SEO).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.title,
+  url: profile.siteUrl,
+  email: profile.email,
+  address: { '@type': 'PostalAddress', addressLocality: profile.location },
+  sameAs: [profile.github, profile.linkedin, profile.instagram],
 }
 
 export default function RootLayout({
@@ -27,21 +81,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-grid min-h-screen flex flex-col">
-        <Nav />
-        <main className="flex-1 pt-20 pb-24">
-          {children}
-        </main>
-        <footer className="border-t border-white/5 py-6">
-          <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-2 text-xs text-zinc-500">
-            <SocialLinks />
-            <p className="text-center">
-              Designed by <span className="text-zinc-300 font-medium">Skanda Bharadwaj GM</span> ·
-              <span className="ml-1">Copyright © Skanda 2026</span>
-            </p>
-          </div>
-        </footer>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="flex min-h-screen flex-col font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ThemeProvider>
+          <LoadingScreen />
+          <ScrollProgress />
+          <FloatingNav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
