@@ -13,7 +13,7 @@ export const profile = {
     'From research notebooks to production-grade ML.',
   ],
   summary:
-    'AI/ML engineer and researcher focused on building production-grade intelligent systems across agentic AIcomputer vision, generative AI and applied deep learning.',
+    'AI/ML engineer and researcher focused on building production-grade intelligent systems across agentic AI, computer vision, generative AI and applied deep learning.',
   location: 'Bengaluru, India',
   email: 'skandabharadwajgm@gmail.com', // TODO: replace with your real email
   phone: '+91 8217289336',
@@ -43,7 +43,7 @@ export const profile = {
 
   // Assets (place files in /public)
   resumeUrl: '/resume.pdf',
-  photoUrl: '/profile.png', // TODO: add a square professional photo at public/profile.jpg
+  photoUrl: '/profile.png', // square professional photo at public/profile.png
 
   // Site URL for SEO / Open Graph
   siteUrl: 'https://skanda-portfolio.vercel.app',
