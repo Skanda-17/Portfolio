@@ -15,33 +15,42 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        // Headings use the editorial serif
+        display: ['var(--font-serif)', 'Georgia', 'serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
+      // Sharper corners for a clean, editorial feel (less rounded)
+      borderRadius: {
+        lg: '0.25rem',
+        xl: '0.3rem',
+        '2xl': '0.4rem',
+        '3xl': '0.5rem',
       },
       colors: {
         /**
-         * Restrained, professional palette: a single desaturated steel-blue
-         * accent over deep neutral slate. The three "brand" tones are kept
-         * close in hue so gradients read as subtle tonal shifts, not a rainbow.
+         * Plain, professional black-and-brown palette. A single warm tan/mocha
+         * accent over near-black. The "brand" tones are all close browns so any
+         * legacy gradient reads as a solid, understated brown.
          */
         brand: {
-          blue: '#4f7cc0',
-          cyan: '#5b8fbd',
-          purple: '#6b7cbd',
+          blue: '#8a6d4f',
+          cyan: '#a8825c',
+          purple: '#6b5544',
         },
-        accent: '#7aa2d9',
-        surface: '#0a0d14',
-        card: '#111621',
+        accent: '#b08968',
+        surface: '#0c0a09',
+        card: '#17120f',
       },
       boxShadow: {
-        // Soft depth instead of neon glow
-        glow: '0 14px 40px -18px rgba(79, 124, 192, 0.35)',
-        'glow-purple': '0 14px 40px -18px rgba(107, 124, 189, 0.3)',
+        // Plain, neutral depth (no colored glow)
+        glow: '0 8px 24px -14px rgba(0, 0, 0, 0.7)',
+        'glow-purple': '0 8px 24px -14px rgba(0, 0, 0, 0.7)',
       },
       backgroundImage: {
-        'brand-gradient':
-          'linear-gradient(135deg, #4f7cc0 0%, #5b8fbd 50%, #6b7cbd 100%)',
+        // Near-solid brown so buttons read as flat, not gradient-y
+        'brand-gradient': 'linear-gradient(135deg, #a8825c 0%, #92714b 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

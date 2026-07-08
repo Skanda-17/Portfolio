@@ -26,16 +26,12 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
-            whileHover={{ y: -6 }}
-            className="glass group relative overflow-hidden rounded-2xl p-6"
+            className="glass group rounded-2xl p-6 transition-colors hover:border-accent/40"
           >
-            <div
-              className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br ${group.gradient} opacity-40 blur-2xl transition-opacity group-hover:opacity-70`}
-            />
-            <h3 className="relative font-display text-lg font-semibold text-white">
+            <h3 className="font-display text-lg font-semibold text-white">
               {group.category}
             </h3>
-            <ul className="relative mt-4 flex flex-wrap gap-2">
+            <ul className="mt-4 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
                 <li
                   key={skill}

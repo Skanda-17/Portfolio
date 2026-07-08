@@ -1,16 +1,23 @@
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { profile } from '@/lib/profile'
-import { ThemeProvider } from '@/components/theme/ThemeProvider'
 import FloatingNav from '@/components/FloatingNav'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import LoadingScreen from '@/components/ui/LoadingScreen'
 import Footer from '@/components/sections/Footer'
 
-const spaceGrotesk = Space_Grotesk({
+// Inter for UI / body copy.
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+// Playfair Display: an elegant, editorial serif for headings and the name.
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-serif',
   display: 'swap',
 })
 
@@ -58,7 +65,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#050816',
+  themeColor: '#0c0a09',
   width: 'device-width',
   initialScale: 1,
 }
@@ -83,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col font-sans antialiased">
@@ -91,13 +98,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ThemeProvider>
-          <LoadingScreen />
-          <ScrollProgress />
-          <FloatingNav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <LoadingScreen />
+        <ScrollProgress />
+        <FloatingNav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )

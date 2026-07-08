@@ -6,27 +6,17 @@
 /* Theme tokens                                                        */
 /* ------------------------------------------------------------------ */
 :root {
-  --surface: #0a0d14;
-  --card: #111621;
-  --accent: #7aa2d9;
-  --brand-blue: #4f7cc0;
-  --brand-cyan: #5b8fbd;
-  --brand-purple: #6b7cbd;
-  --text: #e8ecf3;
-  --muted: #8b93a3;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.07);
-}
-
-/* Optional light theme (toggled via the `light` class on <html>) */
-.light {
-  --surface: #f6f8fb;
-  --card: #ffffff;
-  --accent: #3f68a8;
-  --text: #101623;
-  --muted: #556072;
-  --glass-bg: rgba(15, 23, 42, 0.035);
-  --glass-border: rgba(15, 23, 42, 0.08);
+  --surface: #0c0a09;
+  --card: #17120f;
+  --accent: #b08968;
+  --brand-blue: #8a6d4f;
+  --brand-cyan: #a8825c;
+  --brand-purple: #6b5544;
+  --text: #ece7e1;
+  --muted: #a1968b;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: #17120f;
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -34,10 +24,8 @@ html {
 }
 
 body {
-  /* A single, very subtle top glow over a deep neutral base — understated. */
-  background:
-    radial-gradient(900px circle at 50% -8%, rgba(122, 162, 217, 0.07) 0, transparent 60%),
-    var(--surface);
+  /* Plain, flat background */
+  background: var(--surface);
   color: var(--text);
   min-height: 100vh;
 }
@@ -66,11 +54,11 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.28);
+  background: rgba(176, 137, 104, 0.4);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.42);
+  background: rgba(176, 137, 104, 0.6);
 }
 
 @layer utilities {
@@ -78,58 +66,27 @@ body {
     text-wrap: balance;
   }
 
-  /* Subtle grid background overlay */
+  /* Plain background (grid removed for a flat, professional look) */
   .bg-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 56px 56px;
+    background-image: none;
   }
 
-  /* Glassmorphism card surface */
+  /* Solid, opaque card surface (no blur / glassmorphism) */
   .glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: var(--card);
+    border: 1px solid var(--card-border);
   }
 
-  /* Refined off-white heading treatment (static, understated) */
+  /* Solid heading colour (no gradient / animation) */
   .gradient-text {
-    background: linear-gradient(180deg, #f3f6fb 0%, #bcc7d8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .light .gradient-text {
-    background: linear-gradient(180deg, #1b2434 0%, #3f68a8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
+    background: none;
   }
 
-  /* Gradient border helper (use as wrapper) */
+  /* Plain bordered wrapper (kept as a simple 1px border) */
   .gradient-border {
     position: relative;
-    background-clip: padding-box;
-  }
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(122, 162, 217, 0.35),
-      rgba(122, 162, 217, 0.04)
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0.7;
-    pointer-events: none;
+    border: 1px solid var(--card-border);
   }
 }

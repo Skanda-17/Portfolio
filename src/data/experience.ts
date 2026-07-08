@@ -12,6 +12,20 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    // TODO: refine the achievement bullets and impact metric with your real work at MathCo.
+    role: 'AI Intern',
+    organization: 'MathCo',
+    duration: 'Jul 2026 – Present',
+    location: 'Bengaluru, India',
+    achievements: [
+      'Working with data science and engineering teams to build AI/ML solutions for enterprise clients.',
+      'Developing and evaluating machine learning and generative AI models on real-world business data.',
+      'Contributing to data pipelines, experimentation and deployment of production-grade ML workflows.',
+    ],
+    technologies: ['Python', 'Machine Learning', 'Generative AI', 'Data Science'],
+    impact: 'Delivering data-driven AI solutions that support enterprise decision-making.',
+  },
+  {
     role: 'Project Intern — Computer Vision',
     organization: 'SakhaTech Information Systems Pvt. Ltd',
     duration: 'Jun 2025 – Jul 2025',

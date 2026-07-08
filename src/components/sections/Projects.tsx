@@ -24,30 +24,27 @@ function ProjectCard({ project }: { project: Project }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4 }}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -4 }}
       className="glass group flex flex-col overflow-hidden rounded-2xl"
     >
       {/* Visual */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <div
-          className={`absolute inset-0 bg-gradient-to-tr ${project.gradient}`}
-        />
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-black/30">
         {showImage ? (
           <Image
             src={project.image as string}
             alt={`${project.title} preview`}
             fill
             onError={() => setImgError(true)}
-            className="object-cover opacity-80 mix-blend-overlay transition-transform duration-500 group-hover:scale-105"
+            className="object-cover"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-display text-4xl font-bold text-white/80">
+            <span className="text-4xl font-bold text-zinc-700">
               {project.title.charAt(0)}
             </span>
           </div>
         )}
-        <span className="absolute left-3 top-3 rounded-full bg-black/40 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur">
+        <span className="absolute left-3 top-3 rounded-md bg-black/60 px-2.5 py-1 text-[11px] font-medium text-zinc-200">
           {project.category}
         </span>
       </div>

@@ -1,6 +1,4 @@
 /** Featured projects rendered as premium, filterable cards. */
-// NOTE: card gradients intentionally use dark, low-saturation tones so project
-// imagery reads cleanly and the UI stays understated/professional.
 export type ProjectCategory =
   | 'Computer Vision'
   | 'Generative AI'
@@ -17,8 +15,9 @@ export interface Project {
   results: string[]
   github?: string
   demo?: string
-  /** Optional image in /public/projects. Falls back to a gradient when absent. */
+  /** Optional image in /public/projects. Falls back to a plain monogram when absent. */
   image?: string
+  /** Reserved accent classes (not rendered in the current plain theme). */
   gradient: string
 }
 
