@@ -20,23 +20,28 @@ const config: Config = {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // Core brand palette: blue, cyan, purple + white accents
+        /**
+         * Restrained, professional palette: a single desaturated steel-blue
+         * accent over deep neutral slate. The three "brand" tones are kept
+         * close in hue so gradients read as subtle tonal shifts, not a rainbow.
+         */
         brand: {
-          blue: '#3b82f6',
-          cyan: '#06b6d4',
-          purple: '#8b5cf6',
+          blue: '#4f7cc0',
+          cyan: '#5b8fbd',
+          purple: '#6b7cbd',
         },
-        accent: '#38bdf8',
-        surface: '#050816',
-        card: '#0b1226',
+        accent: '#7aa2d9',
+        surface: '#0a0d14',
+        card: '#111621',
       },
       boxShadow: {
-        glow: '0 0 40px -10px rgba(56, 189, 248, 0.45)',
-        'glow-purple': '0 0 40px -10px rgba(139, 92, 246, 0.45)',
+        // Soft depth instead of neon glow
+        glow: '0 14px 40px -18px rgba(79, 124, 192, 0.35)',
+        'glow-purple': '0 14px 40px -18px rgba(107, 124, 189, 0.3)',
       },
       backgroundImage: {
         'brand-gradient':
-          'linear-gradient(135deg, #3b82f6 0%, #06b6d4 45%, #8b5cf6 100%)',
+          'linear-gradient(135deg, #4f7cc0 0%, #5b8fbd 50%, #6b7cbd 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

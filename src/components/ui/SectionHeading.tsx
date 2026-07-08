@@ -18,7 +18,7 @@ export default function SectionHeading({
   const alignment = align === 'center' ? 'text-center mx-auto' : 'text-left'
   return (
     <Reveal className={`max-w-2xl ${alignment} mb-12`}>
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-cyan mb-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent mb-3">
         {eyebrow}
       </p>
       <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">

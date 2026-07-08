@@ -16,9 +16,9 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-grid pt-28 pb-16"
     >
       <ParticleBackground />
-      {/* Ambient glow accents */}
-      <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-brand-blue/20 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-brand-purple/20 blur-[120px]" />
+      {/* Ambient glow accents (kept very subtle) */}
+      <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-brand-blue/10 blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-brand-purple/[0.07] blur-[130px]" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
         <div>
@@ -108,8 +108,8 @@ export default function Hero() {
           className="mx-auto"
         >
           <div className="relative h-56 w-56 sm:h-72 sm:w-72">
-            <div className="absolute inset-0 animate-spin-slow rounded-full bg-brand-gradient opacity-70 blur-[2px]" />
-            <div className="absolute inset-[3px] overflow-hidden rounded-full bg-surface">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/15 to-transparent" />
+            <div className="absolute inset-[2px] overflow-hidden rounded-full bg-surface ring-1 ring-white/10">
               <Image
                 src={profile.photoUrl}
                 alt={`Portrait of ${profile.name}`}

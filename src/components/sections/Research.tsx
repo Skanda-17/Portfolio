@@ -18,8 +18,8 @@ const typeIcon: Record<ResearchType, typeof FileText> = {
 }
 
 const typeColor: Record<ResearchType, string> = {
-  Paper: 'text-brand-cyan',
-  Patent: 'text-amber-300',
+  Paper: 'text-accent',
+  Patent: 'text-amber-300/70',
   Ongoing: 'text-brand-purple',
 }
 

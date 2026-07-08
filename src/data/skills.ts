@@ -12,37 +12,37 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
   {
     category: 'Programming',
-    gradient: 'from-blue-500/30 to-cyan-500/30',
+    gradient: 'from-blue-800/20 to-cyan-800/20',
     skills: ['Python', 'Java', 'SQL'],
   },
   {
     category: 'AI & Machine Learning',
-    gradient: 'from-cyan-500/30 to-sky-500/30',
+    gradient: 'from-cyan-800/20 to-sky-800/20',
     skills: ['Scikit-Learn', 'TensorFlow', 'PyTorch', 'XGBoost', 'Keras'],
   },
   {
     category: 'Computer Vision',
-    gradient: 'from-purple-500/30 to-fuchsia-500/30',
+    gradient: 'from-purple-800/20 to-fuchsia-800/20',
     skills: ['OpenCV', 'YOLOv8', 'MediaPipe', 'Detectron2', 'RTMPose'],
   },
   {
     category: 'Generative AI & LLMs',
-    gradient: 'from-indigo-500/30 to-purple-500/30',
+    gradient: 'from-indigo-800/20 to-purple-800/20',
     skills: ['LangChain', 'RAG', 'FAISS', 'Hugging Face Transformers', 'Ollama'],
   },
   {
     category: 'Data Science',
-    gradient: 'from-sky-500/30 to-blue-500/30',
+    gradient: 'from-sky-800/20 to-blue-800/20',
     skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
   },
   {
     category: 'Cloud & Deployment',
-    gradient: 'from-cyan-500/30 to-teal-500/30',
+    gradient: 'from-cyan-800/20 to-teal-800/20',
     skills: ['AWS', 'Docker', 'GitHub Actions', 'Render'],
   },
   {
     category: 'Databases',
-    gradient: 'from-violet-500/30 to-blue-500/30',
+    gradient: 'from-violet-800/20 to-blue-800/20',
     skills: ['MySQL', 'PostgreSQL', 'Supabase'],
   },
 ]

@@ -64,7 +64,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.problem}
           </p>
           <p className="flex gap-1.5 text-zinc-400">
-            <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />
+            <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
             <span>
               <span className="font-medium text-zinc-200">Solution: </span>
               {project.solution}
@@ -75,7 +75,7 @@ function ProjectCard({ project }: { project: Project }) {
         <ul className="mt-4 space-y-1.5">
           {project.results.map((r) => (
             <li key={r} className="flex items-center gap-2 text-sm text-zinc-300">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400/70" />
               {r}
             </li>
           ))}

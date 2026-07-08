@@ -43,7 +43,8 @@ export default function ParticleBackground() {
       r: Math.random() * 1.6 + 0.6,
     }))
 
-    const colors = ['#3b82f6', '#06b6d4', '#8b5cf6']
+    // Single, muted tone keeps the motif subtle and professional.
+    const colors = ['#7aa2d9', '#6b7690', '#8b93a3']
     let raf = 0
 
     const draw = () => {
@@ -59,7 +60,7 @@ export default function ParticleBackground() {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx.fillStyle = colors[i % colors.length]
-        ctx.globalAlpha = 0.6
+        ctx.globalAlpha = 0.35
         ctx.fill()
 
         // Connect nearby particles with faint lines.
@@ -70,9 +71,9 @@ export default function ParticleBackground() {
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(q.x, q.y)
-            ctx.strokeStyle = '#38bdf8'
-            ctx.globalAlpha = (1 - dist / 120) * 0.18
-            ctx.lineWidth = 0.6
+            ctx.strokeStyle = '#7aa2d9'
+            ctx.globalAlpha = (1 - dist / 120) * 0.09
+            ctx.lineWidth = 0.5
             ctx.stroke()
           }
         }

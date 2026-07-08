@@ -71,8 +71,8 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  <div className="mt-4 flex items-start gap-2 rounded-xl bg-emerald-500/10 p-3 text-sm text-emerald-200">
-                    <TrendingUp className="mt-0.5 h-4 w-4 shrink-0" />
+                  <div className="mt-4 flex items-start gap-2 rounded-xl border border-white/5 bg-white/[0.03] p-3 text-sm text-zinc-300">
+                    <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                     {exp.impact}
                   </div>
 

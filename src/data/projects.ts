@@ -1,4 +1,6 @@
 /** Featured projects rendered as premium, filterable cards. */
+// NOTE: card gradients intentionally use dark, low-saturation tones so project
+// imagery reads cleanly and the UI stays understated/professional.
 export type ProjectCategory =
   | 'Computer Vision'
   | 'Generative AI'
@@ -45,7 +47,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/justice-lens.jpg',
-    gradient: 'from-sky-500/40 via-indigo-500/40 to-fuchsia-500/40',
+    gradient: 'from-sky-900/30 via-indigo-900/30 to-fuchsia-900/30',
   },
   {
     title: 'SQUAADO',
@@ -62,7 +64,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/squaado.jpg',
-    gradient: 'from-emerald-500/40 via-cyan-500/40 to-blue-500/40',
+    gradient: 'from-emerald-900/30 via-cyan-900/30 to-blue-900/30',
   },
   {
     title: 'Multimodal Thermal-RGB Physiological Abnormality Detection',
@@ -79,7 +81,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/thermal-rgb.jpg',
-    gradient: 'from-rose-500/40 via-orange-500/40 to-amber-500/40',
+    gradient: 'from-rose-900/30 via-orange-900/30 to-amber-900/30',
   },
   {
     title: 'Pressure Gauge Reader',
@@ -96,7 +98,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/pressure-gauge.jpg',
-    gradient: 'from-cyan-500/40 via-blue-500/40 to-indigo-500/40',
+    gradient: 'from-cyan-900/30 via-blue-900/30 to-indigo-900/30',
   },
   {
     title: 'Retail Sales Forecasting',
@@ -113,7 +115,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/sales-forecast.jpg',
-    gradient: 'from-amber-500/40 via-orange-500/40 to-rose-500/40',
+    gradient: 'from-amber-900/30 via-orange-900/30 to-rose-900/30',
   },
   {
     title: 'Optic Log — Digital Attendance Management',
@@ -130,7 +132,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/optic-log.jpg',
-    gradient: 'from-indigo-500/40 via-blue-500/40 to-cyan-500/40',
+    gradient: 'from-indigo-900/30 via-blue-900/30 to-cyan-900/30',
   },
   {
     title: 'Adhyayana',
@@ -147,7 +149,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/adhyayana.jpg',
-    gradient: 'from-purple-500/40 via-fuchsia-500/40 to-indigo-500/40',
+    gradient: 'from-purple-900/30 via-fuchsia-900/30 to-indigo-900/30',
   },
   {
     title: 'DeepFake Image Detection',
@@ -164,7 +166,7 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/deepfake.jpg',
-    gradient: 'from-rose-500/40 via-pink-500/40 to-purple-500/40',
+    gradient: 'from-rose-900/30 via-pink-900/30 to-purple-900/30',
   },
   {
     title: 'ColdWatch',
@@ -181,6 +183,6 @@ export const projects: Project[] = [
     github: 'https://github.com/Skanda-17',
     demo: '#',
     image: '/projects/coldwatch.jpg',
-    gradient: 'from-cyan-500/40 via-sky-500/40 to-blue-500/40',
+    gradient: 'from-cyan-900/30 via-sky-900/30 to-blue-900/30',
   },
 ]
